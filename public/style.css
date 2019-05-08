@@ -2,17 +2,19 @@ html, body {
     height: 100%;
 }
 
-/*.container {*/
-/*    position: relative;*/
-/*    top: 50%;*/
-/*    transform: translateY(-100%);*/
-/*    text-align: center;*/
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+    text-align: center;
 }
+
 /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window
    with position:fixed. Width, height, top and left speak
    for themselves. Background we set to 80% white with
    our animation centered, and no-repeating */
+
 .modal {
     display:    none;
     position:   fixed;
