@@ -11,42 +11,20 @@ const $ = require('jquery');
 // const {pageLoad} = require('./loading-message');
 
 const {getMovies} = require('./api.js');
+const {addNewMovie} = require('./add-new-movies');
 
 
-// module.exports = pageLoad();
-//
-// function pushMovies(movies) {
-//
-//   let html = '';
-//   let i;
-//
-//   for (i = 0; i <= movies.length; i++) {
-//
-//     // let title = Promise.PromiseValue[i].title;
-//
-//     html += '<div class="container">';
-//     html += '<h1>' + title + '</h1>';
-//     html += '</div>';
-//   }
-//
-//   return html;
+getMovies();
+addNewMovie();
+
+//   function appendData(data) {
+//     let mainContainer = document.getElementById("myData");
+//     for (let i = 0; i < data.length; i++) {
+//       let div = document.createElement("div");
+//       div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+//       mainContainer.appendChild(div);
+//     }
 // }
-
-// console.log(getMovies());
-
-getMovies().then((movies) => {
-  console.log('Here are all the movies:');
-
-
-  document.getElementsByClassName('.container').innerHTML;
-
-
-  // movies.forEach(({title, rating, id}) => {
-  //   console.log(`id#${id} - ${title} - rating: ${rating}`);
-  }).catch((error) => {
-  alert('Oh no! Something went wrong.\nCheck the console for details.');
-  console.log(error);
-});
 
 
 

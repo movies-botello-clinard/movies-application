@@ -9,6 +9,21 @@
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
+    },
+    {
+      "addedMovieName": "sd",
+      "addedMovieRating": "",
+      "id": 3
+    },
+    {
+      "addedMovieName": "starwars",
+      "addedMovieRating": "5",
+      "id": 4
+    },
+    {
+      "addedMovieName": "starwars",
+      "addedMovieRating": "5",
+      "id": 5
     }
   ]
 }

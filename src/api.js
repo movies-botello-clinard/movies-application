@@ -1,24 +1,31 @@
 module.exports = {
   getMovies: () => {
-    return fetch('/api/movies')
-        .then(response => response.json())
-        .then(function (movies) {
-
-          movies.forEach((movies) => {
-           const {id, title, rating} = movies;
-
-            console.log(`id#${id} - ${title} - rating: ${rating}`);
-
-            // result +=
-            //
-            //     `<div>
-            //         <h2>Movie title is ${id}</h2>
-            //         </div>`;
-
-            // document.getElementsByClassName('.container').innerHTML = result;
-          })
+    fetch('/api/movies')
+        .then(function (response) {
+          return response.json();
+          // console.log(response.json());
+        })
+        .then(function (data) {
+          appendData(data);
+        })
+        .catch(function (err) {
+          console.log('error: ' + err);
         });
-  }};
+
+    //Pushing data to HTML\\
+    //Used above\\
+    function appendData(data) {
+      let movieContainer = document.getElementById("container");
+      for (let i = 0; i < data.length; i++) {
+        let div = document.createElement("div");
+        div.innerHTML = 'Movie Name: ' + data[i].title + '<br>' +
+            'Movie Rating: ' + data[i].rating;
+        movieContainer.appendChild(div);
+      }
+    }
+  }
+};
+
 
 
 

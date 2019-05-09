@@ -6,17 +6,49 @@
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+<div class="movieSection">
+<div id="container">
 
-<div class="modal"><p></p></div>
-<div class="container">
-   <h2></h2>
 </div>
 
+<!--////////////////////////////////////////-->
+<!--BUTTON TO ADD CREATE FORM TO ADD MOVIES-->
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+<div id="btn-addMovies">
+    <label for="btn-addMovies">Want To Add A Movie?</label>
+    <button type="button">Click Here!</button>
+</div>
+</div>
+<!--////////////////////////////////////////-->
+<!--BUTTON TO ADD CREATE FORM TO ADD MOVIES-->
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+<br>
+<div class="addForm">
+<form action="/api/movies" method="post">
+    <div>
+        <label for="nameOfMovieAdd">Name of Movie: </label><br>
+        <input type="text" id="nameOfMovieAdd" name="addedMovieName">
+    </div>
+    <div>
+        <label for="addRating">Rating: </label><br>
+        <input type="number" id="addRating" name="addedMovieRating">
+    </div>
 
-<!--    <div class="container">-->
-<!--        <h1>Hello There!</h1>-->
-<!--        <p>To get started, edit <code>src/index.js</code>.</p>-->
+    <!--       ONCE THE GENRE FUNCTION IS ADDED THEN ADD THIS PART! -->
+
+<!--    <div>-->
+<!--        <label for="addGenre">Genre: </label>-->
+<!--        <input type="text" id="addGenre" name="addedMovieGenre">-->
 <!--    </div>-->
+    <button id='addNewMovie-btn' type="submit">Submit New Movie</button>
+
+</form>
+</div>
+
+<div class="modal">
+
+</div>
+
 
     <script src="./main.js"></script>
 </body>
