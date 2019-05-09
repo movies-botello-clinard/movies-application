@@ -2,8 +2,9 @@ module.exports = {
   getMovies: () => {
     fetch('/api/movies')
         .then(function (response) {
-          return response.json();
           // console.log(response.json());
+          return response.json();
+
         })
         .then(function (data) {
           appendData(data);

@@ -24,15 +24,13 @@
 <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 <br>
 <div class="addForm">
-<form action="/api/movies" method="post">
-    <div>
+<form method="POST" action="/api/movies" >
         <label for="nameOfMovieAdd">Name of Movie: </label><br>
-        <input type="text" id="nameOfMovieAdd" name="addedMovieName">
-    </div>
-    <div>
+        <input type="text" id="nameOfMovieAdd" name="title" required>
+<br>
         <label for="addRating">Rating: </label><br>
-        <input type="number" id="addRating" name="addedMovieRating">
-    </div>
+        <input type="number" id="addRating" name="rating" required>
+    <br>
 
     <!--       ONCE THE GENRE FUNCTION IS ADDED THEN ADD THIS PART! -->
 

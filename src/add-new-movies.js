@@ -4,12 +4,14 @@ module.exports = {
     addNewMovie: () => {
 
         $("#addNewMovie-btn").click(function () {
-
-            addedMovieName = $("#nameOfMovieAdd").val();
-            console.log(addedMovieName);
-
-            addedMovieRating = $('#addRating').val();
-            console.log(addedMovieRating);
+            function getTitle () {
+                title = $("#nameOfMovieAdd").val();
+                return title;
+            }
+            function getRating() {
+                rating = $('#addRating').val();
+                return rating;
+            }
         })
     }
 };
