@@ -7,15 +7,17 @@
 /**
  * require style imports
  */
+
 const $ = require('jquery');
 // const {pageLoad} = require('./loading-message');
 
-const {getMovies} = require('./api.js');
+// const {getMovies} = require('./add-new-movies');
 const {addNewMovie} = require('./add-new-movies');
 
 
-getMovies();
+// getMovies();
 addNewMovie();
+
 
 //   function appendData(data) {
 //     let mainContainer = document.getElementById("myData");
