@@ -3,65 +3,147 @@
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="./style.css" />
+
 </head>
 <body>
-<div class="movieSection">
-<div id="container">
 
+
+<!--container for the cards-->
+
+<div class="card-container">
+
+<!--    first card-->
+
+<div class="card" style="width: 18rem;">
+        <img src="./casablanca.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Casablanca</h5>
+        <p class="card-text">A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.</p>
+        <a href="#" class="btn btn-secondary">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+    </div>
 </div>
 
-<!--////////////////////////////////////////-->
-<!--BUTTON TO ADD CREATE FORM TO ADD MOVIES-->
-<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
-<div id="btn-addMovies">
-    <label for="btn-addMovies">Want To Add A Movie?</label>
-    <button type="button">Click Here!</button>
+<!--    second card -->
+
+<div class="card" style="width: 18rem;">
+        <img src="./starwars.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Star Wars: A New Hope</h5>
+        <p class="card-text">Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's battle station, while also attempting to rescue Princess Leia from Darth Vader.</p>
+        <a href="#" class="btn btn-secondary">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+    </div>
 </div>
+
+<!--    push to this card-->
+
+<div class="pushFilm"></div>
 </div>
-<!--////////////////////////////////////////-->
-<!--BUTTON TO ADD CREATE FORM TO ADD MOVIES-->
-<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
-<br>
 
 
+<!--container for form on left side -->
 
+<div class="left-container">
 
-<div class="addForm">
-<form method="POST" action="/api/movies" >
-        <label for="nameOfMovieAdd">Name of Movie: </label><br>
-        <input type="text" id="nameOfMovieAdd" name="title" required>
-<br>
-        <label for="addRating">Rating: </label><br>
-        <input type="number" id="addRating" name="rating" required>
-    <br>
-    <label for="editMovie">Edit Movie: </label><br>
-    <input type="text" id="editMovie" name="edit" required>
-    <br>
-    <label for="deleteMovie">Delete Movie: </label><br>
-    <input type="text" id="deleteMovie" name="delete" required>
-    <br>
+<!--    form container-->
 
+<form>
 
+<!--   Title input-->
 
+    <div class="form-group row">
+        <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputTitle" placeholder="Film title">
+        </div>
+    </div>
 
+<!--    Summary input-->
 
-    <!--       ONCE THE GENRE FUNCTION IS ADDED THEN ADD THIS PART! -->
+    <div class="form-group row">
+        <label for="inputSummary" class="col-sm-2 col-form-label">Summary</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputSummary" placeholder="Film summary">
+        </div>
+    </div>
 
-<!--    <div>-->
-<!--        <label for="addGenre">Genre: </label>-->
-<!--        <input type="text" id="addGenre" name="addedMovieGenre">-->
-<!--    </div>-->
-    <button id='addNewMovie-btn' type="submit">Submit New Movie</button>
+<!--    Rating input-->
 
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Rating</legend>
+            <div class="col-sm-10 form-inline">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                        1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                        2
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                    <label class="form-check-label" for="gridRadios3">
+                        3
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+<!--    Upload image input-->
+
+    <div class="form-group row">
+        <div class="col-sm-2">Upload</div>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <input type="file" name="image"  required />
+<!--                <label class="form-check-label" for="image">-->
+<!--                    Image upload-->
+<!--                </label>-->
+            </div>
+        </div>
+    </div>
+
+<!--    Submit button-->
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
 </form>
 </div>
 
-<div class="modal">
-
-</div>
 
 
-    <script src="./main.js"></script>
+
+
+<script
+        src="http://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+<!-- from bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </body>
 </html>
