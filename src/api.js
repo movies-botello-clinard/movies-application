@@ -76,7 +76,7 @@ function renderMovies() {
         let html = ``;
 
         movies.forEach(({title, summary, rating, id, img}) => {
-            html += `<div class="card flex-nowrap col " style="width: 18rem;" data-dbid = "` + id + `">`;
+            html += `<div class="card-in flex-nowrap col " style="width: 18rem;" data-dbid = "` + id + `">`;
             html += `<img src="` + img + `" class="card-img-top " alt="..." data-dbid = "` + id + `">`;
             html += `<div class="card-body edit-input" data-dbid = "` + id + `">`;
             html += `<h5 class="card-title edit-input" data-dbid = "` + id + `">` + title + `</h5>`;
