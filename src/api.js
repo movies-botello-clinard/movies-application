@@ -32,14 +32,15 @@ const addMovie =  () =>{
 
 // remove movie
 
-const removeMovie = (title) => {
+
+const removeMovie = (id) => {
     const options = {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
         },
     };
-    fetch(url + '/' + title + '', options)
+    fetch(url + '/' + id + '' , options)
         .then(() => console.log(`movie ${title} deleted`))
         .catch(() => console.log('error on delete'));
 };
@@ -52,8 +53,7 @@ function renderMovies() {
 
         let html = ``;
 
-        movies.forEach(({title, rating, id, summary, img}) => {
-
+        movies.forEach(({title, rating, summary, id, img}) => {
             html += `<div class="card flex-nowrap" style="width: 18rem;">`;
             html += `<img src="` + img + `" class="card-img-top" alt="...">`;
             html += `<div class="card-body">`;
@@ -73,18 +73,7 @@ function renderMovies() {
 }
 
 
-
-
-function renderDeletePills() {
-    getMovies().then((movies) => {
-        movies.forEach(({title, rating, id}) => {
-            var html = `<a href="#" class="badge badge-danger" id="${id}">${title}</a>`;
-            $('#delete-mov-title').append(html);
-        })
-    })
-}
-
-export default {getMovies, addMovie, removeMovie, renderMovies, renderDeletePills};
+export default {getMovies, addMovie, removeMovie, renderMovies};
 
 
 //////////////////////////////

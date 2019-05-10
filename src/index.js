@@ -10,21 +10,20 @@ movies.renderMovies();
 
 
 
-$(document).on("click", ".edit-button", function(){
+// $(document).on("click", '.edit-button', function(){
+//
+// });
+//
+// $(document).on("click", ".delete-button", function(){
+//     movies.removeMovie();
+// });
 
-});
-
-$(document).on("click", $(".delete-button"), function(){
-    movies.removeMovie();
-});
-
-$('#submitbutton').on('click', function(){
+$(document).on('click', '#submitbutton', function(){
     console.log($('#inputTitle').val());
     console.log($("input:radio[name=inlineRadioOptions]:checked").val());
     console.log($('#inputSummary').val());
     movies.addMovie();
     movies.renderMovies();
-
 });
 
 let settings = {
