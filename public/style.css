@@ -6,7 +6,7 @@
 body {
     height: 100%;
     width: 100%;
-    background: purple;
+    background: #7828FA;
     font-family: 'Arimo', Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -20,7 +20,7 @@ body {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     max-width: 100%;
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-left: 1rem;
     margin-right: 1rem;
     -webkit-box-pack: center;
@@ -29,11 +29,12 @@ body {
 }
 
 .card {
-    background: purple;
+    background: #7828FA;
     width: 100%;
     max-width: 90%;
     margin: 1em;
     border-radius: 10px;
+    text-align: center;
 
 }
 .card-in {
@@ -43,7 +44,7 @@ body {
     max-width: 90%;
     margin: 1em;
     border-radius: 10px;
-
+    object-fit: cover;
 }
 
 .card:hover {
@@ -77,7 +78,7 @@ form {
     background: white;
     height: 80%;
     width: 100%;
-    margin-top: 2%;
+    margin-top: 7%;
     padding: 2%;
     border-radius: 1%;
     text-align: -webkit-left;
