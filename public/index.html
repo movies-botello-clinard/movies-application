@@ -26,7 +26,7 @@
 
     <!--    form container-->
 
-    <form>
+    <form class="addForm">
 
         <!--   Title input-->
 
@@ -65,36 +65,77 @@
                     <label class="form-check-label" for="inlineRadio3">3</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="3">
-                    <label class="form-check-label" for="inlineRadio3">4</label>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="3">
-                    <label class="form-check-label" for="inlineRadio3">5</label>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
                 </div>
 
             </div>
         </fieldset>
 
-        <!--    Upload image input-->
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" id="Submitbutton">Submit</button>
+            </div>
+        </div>
+    </form>
 
-        <!--    <div class="form-group row">-->
-        <!--        <div class="col-sm-2">Upload</div>-->
-        <!--        <div class="col-sm-10">-->
-        <!--            <div class="form-check">-->
-        <!--                <input type="file" name="image" class="fu" />-->
-        <!--&lt;!&ndash;                <label class="form-check-label" for="">&ndash;&gt;-->
-        <!--&lt;!&ndash;                    Image upload&ndash;&gt;-->
-        <!--&lt;!&ndash;                </label>&ndash;&gt;-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--    </div>-->
+    <form class="editForm">
 
-        <!--    Submit button-->
+        <!--   Title input-->
+
+        <div class="form-group row">
+            <label for="editTitle" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="editTitle" placeholder="Edit Film title">
+            </div>
+        </div>
+
+        <!--    Summary input-->
+
+        <div class="form-group row">
+            <label for="editSummary" class="col-sm-2 col-form-label">Summary</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="editSummary" placeholder="Edit Film summary">
+            </div>
+        </div>
+
+        <!--    Rating input-->
+
+        <fieldset class="form-group">
+            <div class="row">
+                <span class="col-form-label col-sm-2 pt-0">Rating</span>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="editinlineRadio1" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="editinlineRadio2" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="editinlineRadio3" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="editinlineRadio4" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="editinlineRadio5" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+
+            </div>
+        </fieldset>
 
         <div class="form-group row">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary" id="submitbutton">Submit</button>
+                <button type="submit" class="btn btn-primary" id="edit-submit-button">Submit</button>
             </div>
         </div>
     </form>

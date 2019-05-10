@@ -45,6 +45,28 @@ const removeMovie = (id) => {
         .catch(() => console.log('error on delete'));
 };
 
+const editMovie =  (e) =>{
+    let title =$('#editTitle').val();
+    let summary = $('#editSummary').val();
+    let rating = $("input:radio[name=inlineRadioOptions]:checked").val();
+
+    console.log(title);
+    console.log(summary);
+    console.log(rating);
+    const newMovie = {title: title, rating: rating, summary: summary};
+    const options = {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newMovie),
+    };
+    // console.log(e.target);
+    fetch(url+"/"+ ($(e.target).attr('data-dbid')) ,options)
+        .then(()=> console.log('edited'))
+        .catch(()=> console.log('error'))
+};
+
 
 // render
 function renderMovies() {
@@ -54,12 +76,12 @@ function renderMovies() {
         let html = ``;
 
         movies.forEach(({title, rating, id, img}) => {
-            html += `<div class="card flex-nowrap col" style="width: 18rem;">`;
-            html += `<img src="` + img + `" class="card-img-top" alt="...">`;
-            html += `<div class="card-body">`;
-            html += `<h5 class="card-title">` + title + `</h5>`;
-            html += `<p class="card-rating"><em>Rating: ` + rating + `</em></p>`;
-            html += `<a href="#" class="btn btn-secondary edit-button">Edit</a>`;
+            html += `<div class="card flex-nowrap col " style="width: 18rem;" data-dbid = "` + id + `">`;
+            html += `<img src="` + img + `" class="card-img-top " alt="..." data-dbid = "` + id + `">`;
+            html += `<div class="card-body edit-input" data-dbid = "` + id + `">`;
+            html += `<h5 class="card-title edit-input" data-dbid = "` + id + `">` + title + `</h5>`;
+            html += `<p class="card-rating edit-input" data-dbid = "` + id + `"><em>Rating: ` + rating + `</em></p>`;
+            html += `<a href="#" class="btn btn-secondary edit-button" data-dbid = "` + id + `">Edit</a>`;
             html += `<a href="#" class="btn btn-danger delete-button"  data-dbid = "` + id + `">Delete</a>`;
             html += `</div>`;
             html += `</div>`;
@@ -71,7 +93,7 @@ function renderMovies() {
 }
 
 
-export default {getMovies, addMovie, removeMovie, renderMovies};
+export default {getMovies, addMovie, removeMovie, renderMovies, editMovie};
 
 
 //////////////////////////////
