@@ -10,11 +10,11 @@ movies.renderMovies();
 
 
 
-$(".edit-button").on("click", function(){
+$(document).on("click", ".edit-button", function(){
 
 });
 
-$(".delete-button").on("click", function(){
+$(document).on("click", $(".delete-button"), function(){
     movies.removeMovie();
 });
 
@@ -23,7 +23,6 @@ $('#submitbutton').on('click', function(){
     console.log($("input:radio[name=inlineRadioOptions]:checked").val());
     console.log($('#inputSummary').val());
     movies.addMovie();
-    // $('#row1').html('');
     movies.renderMovies();
 
 });

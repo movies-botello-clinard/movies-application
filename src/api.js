@@ -32,15 +32,15 @@ const addMovie =  () =>{
 
 // remove movie
 
-const removeMovie = (movieID) => {
+const removeMovie = (title) => {
     const options = {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
         },
     };
-    fetch(url + '/' + movieID + '', options)
-        .then(() => console.log(`movie ${movieID} deleted`))
+    fetch(url + '/' + title + '', options)
+        .then(() => console.log(`movie ${title} deleted`))
         .catch(() => console.log('error on delete'));
 };
 
@@ -50,8 +50,10 @@ function renderMovies() {
     getMovies().then((movies) => {
         $("#loadingicon").css("display", "none");
 
+        let html = ``;
+
         movies.forEach(({title, rating, id, summary, img}) => {
-            let html = ``;
+
             html += `<div class="card flex-nowrap" style="width: 18rem;">`;
             html += `<img src="` + img + `" class="card-img-top" alt="...">`;
             html += `<div class="card-body">`;
@@ -62,8 +64,8 @@ function renderMovies() {
             html += `<a href="#" class="btn btn-danger delete-button">Delete</a>`;
             html += `</div>`;
             html += `</div>`;
-            $('#pushFilm').append(html);
-        })
+        });
+            $('#pushFilm').html(html);
     }).catch((error) => {
         alert('Error.');
         console.log(error);

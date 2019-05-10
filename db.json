@@ -13,12 +13,6 @@
       "id": 2,
       "summary": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's battle station, while also attempting to rescue Princess Leia from Darth Vader.",
       "img": "./starwars.jpg"
-    },
-    {
-      "title": "new title",
-      "rating": "3",
-      "summary": "",
-      "id": 3
     }
   ]
 }
