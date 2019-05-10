@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>My Application</title>
+    <title>Movie App</title>
 
     <!--bootstrap css-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -17,35 +17,41 @@
 
 <!--container for the cards-->
 
-<div class="card-container">
+<div class="card-container container-fluid">
+
+    <div id="loader">
+        <img id="loadingicon" src="loadingicon.svg" alt="loading...">
+    </div>
+    <div class="scrolling-wrapper-flexbox" id="row1">
+    </div>
 
 <!--    first card-->
 
-<div class="card" style="width: 18rem;">
-        <img src="./casablanca.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Casablanca</h5>
-        <p class="card-text">A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.</p>
-        <a href="#" class="btn btn-secondary">Edit</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-    </div>
-</div>
+<!--<div class="card" style="width: 18rem;">-->
+<!--        <img src="./casablanca.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--        <h5 class="card-title">Casablanca</h5>-->
+<!--        <p class="card-text">A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.</p>-->
+<!--        <a href="#" class="btn btn-secondary">Edit</a>-->
+<!--        <a href="#" class="btn btn-danger">Delete</a>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--    second card -->
 
-<div class="card" style="width: 18rem;">
-        <img src="./starwars.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Star Wars: A New Hope</h5>
-        <p class="card-text">Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's battle station, while also attempting to rescue Princess Leia from Darth Vader.</p>
-        <a href="#" class="btn btn-secondary">Edit</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-    </div>
-</div>
+<!--<div class="card" style="width: 18rem;">-->
+<!--        <img src="./starwars.jpg" class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--        <h5 class="card-title">Star Wars: A New Hope</h5>-->
+<!--        <p class="card-text">Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's battle station, while also attempting to rescue Princess Leia from Darth Vader.</p>-->
+<!--        <a href="#" class="btn btn-secondary">Edit</a>-->
+<!--        <a href="#" class="btn btn-danger">Delete</a>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--    push to this card-->
 
-<div class="pushFilm"></div>
+<div class="card row flex-row flex-nowrap" id="pushFilm"></div>
 </div>
 
 
@@ -82,71 +88,54 @@
             <legend class="col-form-label col-sm-2 pt-0">Rating</legend>
 
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
                 <label class="form-check-label" for="inlineRadio1">1</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
                 <label class="form-check-label" for="inlineRadio2">2</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
                 <label class="form-check-label" for="inlineRadio3">3</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="3">
                 <label class="form-check-label" for="inlineRadio3">4</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option3">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="3">
                 <label class="form-check-label" for="inlineRadio3">5</label>
             </div>
-<!--            <div class="col-sm-10 form-horizontal">-->
-<!--                <div class="form-check">-->
-<!--                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>-->
-<!--                    <label class="form-check-label" for="gridRadios1">-->
-<!--                        1-->
-<!--                    </label>-->
-<!--                </div>-->
-<!--                <div class="form-check">-->
-<!--                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">-->
-<!--                    <label class="form-check-label" for="gridRadios2">-->
-<!--                        2-->
-<!--                    </label>-->
-<!--                </div>-->
-<!--                <div class="form-check disabled">-->
-<!--                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>-->
-<!--                    <label class="form-check-label" for="gridRadios3">-->
-<!--                        3-->
-<!--                    </label>-->
-<!--                </div>-->
-<!--            </div>-->
-        </div>
-    </fieldset>
+
+       </div>
+   </fieldset>
 
 <!--    Upload image input-->
 
-    <div class="form-group row">
-        <div class="col-sm-2">Upload</div>
-        <div class="col-sm-10">
-            <div class="form-check">
-                <input type="file" name="image"  required />
-<!--                <label class="form-check-label" for="image">-->
-<!--                    Image upload-->
-<!--                </label>-->
-            </div>
-        </div>
-    </div>
+<!--    <div class="form-group row">-->
+<!--        <div class="col-sm-2">Upload</div>-->
+<!--        <div class="col-sm-10">-->
+<!--            <div class="form-check">-->
+<!--                <input type="file" name="image" class="fu" />-->
+<!--&lt;!&ndash;                <label class="form-check-label" for="">&ndash;&gt;-->
+<!--&lt;!&ndash;                    Image upload&ndash;&gt;-->
+<!--&lt;!&ndash;                </label>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
 <!--    Submit button-->
 
     <div class="form-group row">
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="submitbutton">Submit</button>
         </div>
     </div>
 </form>
 </div>
+
+
 
 
 
@@ -167,5 +156,10 @@
 
 
 <script src="main.js"></script>
+
+<script>
+    $('document').ready(function () {
+    })
+</script>
 </body>
 </html>

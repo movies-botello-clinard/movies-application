@@ -3,15 +3,14 @@ body {
 }
 
 .card {
-    display: inline-flex;
+    /*flex: 0 0 auto;*/
+    /*display: inline-block;*/
     text-align:  center;
     float: right;
-    height: 30%;
+    /*height: 30%;*/
     margin-left: .7%;
-}
-
-.card-container {
-    margin-right: 2%;
+    margin-right: 1%;
+    margin-bottom: 2%;
 }
 
 .left-container{
@@ -26,6 +25,7 @@ form {
     margin-top: 2%;
     margin-left: 2%;
     padding: 2%;
+    border-radius: 1%;
 }
 
 
