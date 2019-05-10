@@ -15,9 +15,9 @@
       "img": "./starwars.jpg"
     },
     {
-      "title": "Little Mermaid",
-      "rating": "3",
-      "id": 3
+      "title": "Cinderella",
+      "rating": "2",
+      "id": 4
     }
   ]
 }
