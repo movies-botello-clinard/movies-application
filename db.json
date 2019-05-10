@@ -17,8 +17,12 @@
     {
       "title": "new title",
       "rating": "2",
-      "summary": "",
       "id": 3
+    },
+    {
+      "title": "new title",
+      "rating": "2",
+      "id": 4
     }
   ]
 }

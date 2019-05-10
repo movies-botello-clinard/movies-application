@@ -41,7 +41,7 @@ const removeMovie = (id) => {
         },
     };
     fetch(url + '/' + id + '' , options)
-        .then(() => console.log(`movie ${title} deleted`))
+        .then(() => console.log(`movie deleted`))
         .catch(() => console.log('error on delete'));
 };
 
@@ -53,15 +53,14 @@ function renderMovies() {
 
         let html = ``;
 
-        movies.forEach(({title, rating, summary, id, img}) => {
-            html += `<div class="card flex-nowrap" style="width: 18rem;">`;
+        movies.forEach(({title, rating, id, img}) => {
+            html += `<div class="card flex-nowrap col" style="width: 18rem;">`;
             html += `<img src="` + img + `" class="card-img-top" alt="...">`;
             html += `<div class="card-body">`;
             html += `<h5 class="card-title">` + title + `</h5>`;
-            html += `<p class="card-text">` + summary + `</p>`;
             html += `<p class="card-rating"><em>Rating: ` + rating + `</em></p>`;
             html += `<a href="#" class="btn btn-secondary edit-button">Edit</a>`;
-            html += `<a href="#" class="btn btn-danger delete-button">Delete</a>`;
+            html += `<a href="#" class="btn btn-danger delete-button"  data-dbid = "` + id + `">Delete</a>`;
             html += `</div>`;
             html += `</div>`;
         });

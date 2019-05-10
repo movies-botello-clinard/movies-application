@@ -14,9 +14,10 @@ movies.renderMovies();
 //
 // });
 //
-// $(document).on("click", ".delete-button", function(){
-//     movies.removeMovie();
-// });
+$(document).on("click", ".delete-button", function(){
+    movies.removeMovie($(this).attr('data-dbid'));
+    movies.renderMovies();
+});
 
 $(document).on('click', '#submitbutton', function(){
     console.log($('#inputTitle').val());
