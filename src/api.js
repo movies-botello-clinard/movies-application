@@ -66,7 +66,6 @@ function renderMovies() {
         });
             $('#pushFilm').html(html);
     }).catch((error) => {
-        alert('Error.');
         console.log(error);
     })
 }
