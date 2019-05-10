@@ -1,32 +1,45 @@
-// /**
-//  * es6 modules and imports
-//  */
-// import sayHello from './hello';
-// sayHello('World');
 
-/**
- * require style imports
- */
 
 const $ = require('jquery');
-// const {pageLoad} = require('./loading-message');
-
-// const {getMovies} = require('./add-new-movies');
-const {addNewMovie} = require('./add-new-movies');
 
 
-// getMovies();
-addNewMovie();
+import movies from './api.js';
 
 
-//   function appendData(data) {
-//     let mainContainer = document.getElementById("myData");
-//     for (let i = 0; i < data.length; i++) {
-//       let div = document.createElement("div");
-//       div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
-//       mainContainer.appendChild(div);
-//     }
-// }
+movies.renderMovies();
+
+
+
+$(".edit-button").on("click", function(){
+
+});
+
+$(".delete-button").on("click", function(){
+    movies.removeMovie();
+});
+
+$('#submitbutton').on('click', function(){
+    console.log($('#inputTitle').val());
+    console.log($("input:radio[name=inlineRadioOptions]:checked").val());
+    console.log($('#inputSummary').val());
+    movies.addMovie();
+    // $('#row1').html('');
+    movies.renderMovies();
+
+});
+
+let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "/api/movies",
+    "method": "GET",
+    "headers": {},
+    "data": "{}"
+};
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
 
 
 
